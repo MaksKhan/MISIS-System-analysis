@@ -77,7 +77,7 @@ def index_terms(container, var_name):
     return result
 
 
-def solve(temperature_json, heating_json, rules_json, t_current):
+def main(temperature_json, heating_json, rules_json, t_current):
     temp_obj = load_data(temperature_json)
     heat_obj = load_data(heating_json)
     rules = load_data(rules_json)
@@ -133,7 +133,7 @@ def solve(temperature_json, heating_json, rules_json, t_current):
 if __name__ == "__main__":
     from constants import HEAT, TEMP
 
-    t = solve(
+    t = main(
         TEMP,
         HEAT,
         "[['холодно','интенсивно'],['нормально','умеренно'],['жарко','слабо']]",
